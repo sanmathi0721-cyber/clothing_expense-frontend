@@ -2,20 +2,33 @@
 <html>
 <head>
     <title>Clothing Expense Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
 <body>
-    <h1>All Expenses</h1>
-    <a href="/add">Add New Expense</a>
-    <table border="1">
-        <tr><th>Item</th><th>Price</th><th>Category</th><th>Date</th></tr>
-        {% for exp in expenses %}
-        <tr>
-            <td>{{ exp[1] }}</td>
-            <td>${{ exp[2] }}</td>
-            <td>{{ exp[3] }}</td>
-            <td>{{ exp[4] }}</td>
-        </tr>
-        {% endfor %}
+    <h1>Clothing Expense Tracker</h1>
+    
+    <a href="/add" class="button">Add New Expense</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price ($)</th>
+                <th>Category</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for exp in expenses %}
+            <tr>
+                <td>{{ exp[1] }}</td>
+                <td>{{ exp[2] }}</td>
+                <td>{{ exp[3] }}</td>
+                <td>{{ exp[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
 </body>
 </html>
