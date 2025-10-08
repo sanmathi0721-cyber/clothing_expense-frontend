@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clothing Expense Tracker</title>
+</head>
+<body>
+    <h1>All Expenses</h1>
+    <a href="/add">Add New Expense</a>
+    <table border="1">
+        <tr><th>Item</th><th>Price</th><th>Category</th><th>Date</th></tr>
+        {% for exp in expenses %}
+        <tr>
+            <td>{{ exp[1] }}</td>
+            <td>${{ exp[2] }}</td>
+            <td>{{ exp[3] }}</td>
+            <td>{{ exp[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
